@@ -1,0 +1,8 @@
+/*
+Align Text Edge 0.9.4
+Copyright 2017, saimeishi (http://saimeishi.wpblog.jp/)
+Released under the GPLv2 or later
+align-text-edge.min.js powerd by YUI Compressor.
+ $ java -jar yuicompressor-2.4.7.jar align-text-edge.js -o align-text-edge.min.js --charset utf-8
+*/
+(function(j){var p=document.getElementsByClassName("align_text_edge");var l=document.getElementsByClassName("align_text_edge_desc");if(p.length!=l.length){return}for(var k=0;k<p.length;k++){var e=p[k].getElementsByTagName("img");var m;if(0<e.length){var g=0;var d=e[0].src.lastIndexOf("?w=");if(0<=d){g=parseInt(e[0].src.slice(d+3),10)}if(0<g){e[0].width=g}if(g<=0){g=parseInt(e[0].width,10)}m=p[k].getElementsByTagName("span");if(0<g&&0<m.length){var h=m[0].getAttribute("right_offset");var a=m[0].getAttribute("add_style");var n=document.getElementById("measure_heading_text_width");var c="visibility:hidden;position:absolute;white-space:nowrap;"+a;if(n!=null){n.setAttribute("style",c)}else{j(document.body).append(j('<span id="measure_heading_text_width" style="'+c+'"></span>'))}var b=j("#measure_heading_text_width");var o=b.text(m[0].innerHTML).get(0).offsetWidth;b.empty();m[0].style.left=String(g-o-h)+"px";m[0].setAttribute("style",m[0].getAttribute("style")+a)}}m=l[k].getElementsByTagName("span");if(0<m.length){var q=m[0].style.marginTop;var f=m[0].style.marginBottpm;if(q&&0<q.length){l[k].style.marginTop=q}if(f&&0<f.length){l[k].style.marginBottom=f}}}})(jQuery);
